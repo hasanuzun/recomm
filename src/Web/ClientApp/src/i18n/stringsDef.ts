@@ -7,8 +7,8 @@ export interface IAppStrings {
   account: {
     signin: string;
     signout: string;
-    processingToken: string;
-    processingSignout: string;
+    processingLogin: string;
+    processingLogout: string;
     loginTitle: string;
     email: string;
     emailorUsername: string;

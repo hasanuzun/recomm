@@ -1,0 +1,103 @@
+openapi: 3.0.2
+info:
+  title: Recom Backend API
+  version: "1.0"
+  description: "Use as editor: https://editor.swagger.io"
+  contact:
+    email: "recomm@recomm.com"
+servers:
+  - url: "https://api.server.test/v1"
+components:
+  schemas:
+    RegisterBody:
+      type: object
+      properties:
+        profileImage:
+          type: string
+          format: binary
+        username:
+          type: string
+        birtdDate:
+          type: string
+          format: date
+        height:
+          type: integer
+        wight:
+          type: integer
+      required:
+        - username
+        - birtdDate
+        - profileImage
+    RegisterSuccessResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+    RegisterFailResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          uniqueItems: true
+          items:
+            type: string
+      required:
+        - errors 
+    Suggestions:
+      type: object
+      properties:
+        username:
+          type: string
+        photoUrl:
+          type: string
+          format: uri
+        age:
+          type: integer 
+        height:
+          type: integer
+        wight:
+          type: integer
+      required:
+        - username 
+        - age 
+paths:
+  /register:
+    post:
+      tags:
+        - users
+      requestBody:
+        description: Body for the first registration
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/RegisterBody"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegisterSuccessResponse"
+        "401":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegisterFailResponse"
+
+  /suggestContacts:
+    get:
+      description: List of suggested contracts
+      tags:
+        - users  
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Suggestions"
+        "204":
+          description: No new contact suggestions.

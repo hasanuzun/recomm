@@ -174,10 +174,9 @@ export const Login = (props: { action?: string }) => {
       <div className={classes.root}>
         <Spinner visible={isFetching}>
           <Paper elevation={6} className={classes.paper}>
-            {message !== "" && <Typography color="error">{message}</Typography>}
-            {!!message && <div>{message}</div>}
+            {message !== "" && <Typography color="error">{message}</Typography>} 
             {!message && action === LoginActions.LoginCallback && (
-              <div>Processing login callback</div>
+              <div>{strings.account.processingLogin}</div>
             )}
           </Paper>
         </Spinner>

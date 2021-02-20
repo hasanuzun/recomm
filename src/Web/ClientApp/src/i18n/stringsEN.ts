@@ -7,8 +7,8 @@ export const enStrings: IAppStrings = {
   account: {
     signin: "Sign in",
     signout: "Sign out",
-    processingToken: "User session is being initialized...",
-    processingSignout: "User session is being closed...",
+    processingLogin: "User session is being initialized...",
+    processingLogout: "User session is being closed...",
     loginTitle: "Login",
     email: "E-Mail",
     emailorUsername: "E-Mail oder Username",

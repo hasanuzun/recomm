@@ -7,8 +7,8 @@ export const trStrings: IAppStrings = {
   account: {
     signin: "Giriş yap",
     signout: "Çıkış yap",
-    processingToken: "Kullanıcı bilgileri yükleniyor...",
-    processingSignout: "Kullanıcı oturumu sonlandırılıyor...",
+    processingLogin: "Kullanıcı bilgileri yükleniyor...",
+    processingLogout: "Kullanıcı oturumu sonlandırılıyor...",
     loginTitle: "Kullanıcı Girişi",
     email: "E-Mail",
     emailorUsername: "E-Mail veya Kullanıcı Adı",

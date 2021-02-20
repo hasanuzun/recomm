@@ -7,8 +7,8 @@ export const deStrings: IAppStrings = {
   account: {
     signin: "Anmelden",
     signout: "Abmelden",
-    processingToken: "Benutzersession wird initialisiert...",
-    processingSignout: "Die Benutzersession wird beendet...",
+    processingLogin: "Benutzersession wird initialisiert...",
+    processingLogout: "Die Benutzersession wird beendet...",
     loginTitle: "Anmeldung",
     email: "E-Mail",
     emailorUsername: "E-Mail oder Benutzername",

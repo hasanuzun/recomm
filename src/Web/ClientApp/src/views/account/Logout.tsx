@@ -13,6 +13,7 @@ import {
   LogoutActions,
   QueryParameterNames,
 } from "./../../shared/configs";
+import strings from "../../i18n/strings";
 
 interface LogoutState {
   message?: string;
@@ -181,10 +182,10 @@ export const Logout = (props: { action?: string }) => {
         <Paper elevation={6} className={classes.paper}>
           {!!message && <div>{message}</div>}
           {!message && action === LogoutActions.Logout && (
-            <div>Processing logout</div>
+              <div>{strings.account.processingLogout}</div>
           )}
           {!message && action === LogoutActions.LogoutCallback && (
-            <div>Processing logout callback</div>
+              <div>{strings.account.processingLogout}</div>
           )}
           {!message && action === LogoutActions.LoggedOut && (
             <div>{message}</div>
