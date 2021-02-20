@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  recomm-client-react: 
+    container_name: recomm-client-react 
+    ports:
+      - "5000:80" 
+    environment:
+      - "REACT_APP_APP_URL=http://localhost:5000"
+      - "REACT_APP_API_URL="
+      - "REACT_APP_AUTH_URL=https://hucom-sso.azurewebsites.net/auth/realms/dev"
+      - "REACT_APP_AUTH_CLIENT_ID=recomm"
+      - "REACT_APP_APIScope="

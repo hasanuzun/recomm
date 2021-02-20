@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  recomm-client-react:
+    image: ${DOCKER_REGISTRY:-}recomm-client-react:${TAG:-latest}
+    build:
+      context: ./ClientApp
+      dockerfile: Dockerfile
